@@ -6,7 +6,15 @@ namespace dotnet_code_challenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var dataFeedController = new DataFeedController();
+            dataFeedController.RaceDataReceived += new EventHandler<RaceDataEventArgs>(PrintRaceData);
+            dataFeedController.RegisterDataFeed(new CaufieldDataFeed());
+            dataFeedController.RegisterDataFeed(new WolferhamptonDataFeed());
+        }
+
+        private static void PrintRaceData(object sender, RaceDataEventArgs e)
+        {
+            Console.WriteLine("GOT RACE DATA!");
         }
     }
 }
