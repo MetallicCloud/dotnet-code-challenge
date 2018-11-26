@@ -4,7 +4,7 @@ using System.IO;
 
 namespace dotnet_code_challenge
 {
-    class WolferhamptonDataFeed : IDataFeed
+    public class WolferhamptonDataFeed : IDataFeed
     {
         public event EventHandler<RaceDataEventArgs> RaceDataReceived;
 
@@ -12,7 +12,7 @@ namespace dotnet_code_challenge
         {
         }
 
-        public void Ingest(FileInfo fileInfo)
+        public void Ingest(Stream stream)
         {
 
         }
